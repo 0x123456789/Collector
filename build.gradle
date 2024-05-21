@@ -1,0 +1,23 @@
+apply plugin: 'java'
+
+
+group = 'collector'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'net.portswigger.burp.extensions:montoya-api:2023.10.4'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task buildJar(type: Jar) {
+    // duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
