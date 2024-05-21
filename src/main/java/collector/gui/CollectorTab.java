@@ -132,6 +132,7 @@ public class CollectorTab extends javax.swing.JFrame {
 
         ToolTipManager.sharedInstance().setInitialDelay(1000);
         jSplitPane1.setResizeWeight(0.3);
+        jListValues.setListData(new String[]{"Nothing to show now :)", "Visit some site to update proxy history"});
 
 //        jTree.addMouseListener(new MouseAdapter() {
 //            @Override
